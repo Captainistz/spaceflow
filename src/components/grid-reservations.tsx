@@ -41,6 +41,7 @@ const GridReservations = ({
                     }
                     alt='Card Image'
                     fill
+                    sizes='100'
                     className='rounded-t-md object-cover'
                   />
                   <div className='absolute right-3 bottom-3'>

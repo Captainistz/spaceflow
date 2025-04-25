@@ -43,6 +43,7 @@ const FeaturedSpaces = async () => {
                               src={`/spaces${space.image}`}
                               alt='Card Image'
                               fill
+                              sizes='100'
                               loading='lazy'
                               className='rounded-t-md object-cover'
                             />

@@ -32,6 +32,7 @@ const SpacesView = async ({ spaces }: { spaces: Space[] }) => {
                   src={`/spaces${space.image}`}
                   alt='Card Image'
                   fill
+                  sizes='100'
                   loading='eager'
                   className='rounded-t-md object-cover'
                 />

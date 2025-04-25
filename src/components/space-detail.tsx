@@ -96,6 +96,7 @@ const SpaceDetailClient = ({
               src={`/spaces${space.image}`}
               alt='Card Image'
               fill
+              sizes='100'
               priority
               className='rounded-lg object-cover'
             />
@@ -212,6 +213,7 @@ const SpaceDetailClient = ({
                           }
                           alt='Card Image'
                           fill
+                          sizes='100'
                           className='rounded-t-md object-cover'
                         />
                       </AspectRatio>
@@ -274,6 +276,7 @@ const SpaceDetailClient = ({
                             }
                             alt='Card Image'
                             fill
+                            sizes='100'
                             className='rounded-l-md object-cover'
                           />
                         </div>
