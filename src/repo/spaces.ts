@@ -9,7 +9,7 @@ export const fetchSpaces = (page: number = 1, limit: number = 6) => {
   return new Promise<SpacesPagination>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces?page=${page}&limit=${limit}`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces?page=${page}&limit=${limit}`,
         { next: { revalidate: 300 } },
       )
 
@@ -30,7 +30,7 @@ export const getSpaceById = (id: string) => {
   return new Promise<Space>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${id}`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${id}`,
         {
           cache: 'no-store',
         },
@@ -54,7 +54,7 @@ export const getTimeslots = (spaceId: string, roomId: string, date: string) => {
   return new Promise<TimeSlots[]>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${spaceId}/rooms/${roomId}/reservations/timeslots?date=${date}`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${spaceId}/rooms/${roomId}/reservations/timeslots?date=${date}`,
         { cache: 'no-store' },
       )
 
@@ -81,7 +81,7 @@ export const addRoom = (
   return new Promise(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${space_id}/rooms`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${space_id}/rooms`,
         {
           method: 'POST',
           headers: {
@@ -108,7 +108,7 @@ export const addSpace = (space: Partial<Space>, token: string) => {
     try {
       space.rooms = []
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/`,
         {
           method: 'POST',
           headers: {

@@ -8,7 +8,7 @@ export const authenticateUser = (email: string, password: string) => {
   return new Promise<UserAuthResponse>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/auth/login`,
+        `${process.env.API_ENDPOINT}/api/v1/auth/login`,
         {
           method: 'POST',
           headers: {
@@ -53,7 +53,7 @@ export const updateUserProfile = (
   return new Promise<UserAuthResponse>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/users/${id}`,
+        `${process.env.API_ENDPOINT}/api/v1/users/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -93,7 +93,7 @@ export const registerUser = (user: Omit<User, '_id'>) => {
   return new Promise<UserAuthResponse>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/auth/register`,
+        `${process.env.API_ENDPOINT}/api/v1/auth/register`,
         {
           method: 'POST',
           headers: {

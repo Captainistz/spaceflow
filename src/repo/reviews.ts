@@ -10,7 +10,7 @@ export const createReview = (
   return new Promise<APIResponse<Review>>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${space}/reviews`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${space}/reviews`,
         {
           method: 'POST',
           headers: {
@@ -39,7 +39,7 @@ export const getReviews = (space: string) => {
   return new Promise<APIResponse<Review[]>>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${space}/reviews`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${space}/reviews`,
         {
           cache: 'no-store',
         },
@@ -68,7 +68,7 @@ export const updateReview = (
   return new Promise<APIResponse<Review>>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}`,
         {
           method: 'PUT',
           headers: {
@@ -103,7 +103,7 @@ export const updateReview = (
 //   return new Promise<APIResponse<Review>>(async (resolve, reject) => {
 //     try {
 //       const response = await fetch(
-//         `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}`,
+//         `${process.env.API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}`,
 //         {
 //           method: 'PUT',
 //           headers: {
@@ -135,7 +135,7 @@ export const deleteReview = (
   return new Promise<APIResponse<null>>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}`,
         {
           method: 'DELETE',
           headers: {
@@ -166,7 +166,7 @@ export const upvoteReview = (
   return new Promise<APIResponse<null>>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}/upvote`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}/upvote`,
         {
           method: 'GET',
           headers: {
@@ -197,7 +197,7 @@ export const downvoteReview = (
   return new Promise<APIResponse<null>>(async (resolve, reject) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}/downvote`,
+        `${process.env.API_ENDPOINT}/api/v1/spaces/${spaceId}/reviews/${reviewId}/downvote`,
         {
           method: 'GET',
           headers: {
