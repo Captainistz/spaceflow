@@ -2,19 +2,13 @@ version: '3.8'
 
 services:
   spaceflow-frontend:
-    image: sn0wvy/spaceflow-fe:latest
+    image: ghcr.io/captainistz/spaceflow:latest
     container_name: spaceflow-frontend
     ports:
-      - '3000:3000'
+      - 3000
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_API_ENDPOINT=${NEXT_PUBLIC_API_ENDPOINT:-http://localhost:8080}
       - NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:3000}
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET:-d0GGNiOV7JZogw8xMNfTRefmFJG8nouGSjAp+9UCLeE=}
     restart: unless-stopped
-    networks:
-      - spaceflow-network
-
-networks:
-  spaceflow-network:
-    driver: bridge
